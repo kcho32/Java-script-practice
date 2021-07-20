@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function blurHandler() {
+        let inputElement = document.getElementById("name");
+        inputElement.value  = inputElement.value.toUpperCase();
+      }
+      
+      function changeHandler() {
+        let inputElement = document.getElementById("name");
+        console.log(inputElement.value.toUpperCase());
+      }
+      
+      function preferedBrowser() {
+        const selectElement = document.getElementById("browsers");
+        alert("You prefer browsing internet with " + selectElement.value);
+      }
+
+      function focusHandler(inputText) {
+        inputText.style.background = "yellow";
+      }
+
+      function clickHandler(button) {
+        if (button.value === "dark") {
+          button.value = "light";
+          const bodyElement = document.getElementById("body");
+          bodyElement.style.background = "black";
+          bodyElement.style.color = "white";
+        } else {
+          button.value = "dark";
+          const bodyElement = document.getElementById("body");
+          bodyElement.style.background = "white";
+          bodyElement.style.color = "black";
+        }        
+      }
+
+
+    </script>
+  </head>
+  <br>
+  <body id="body">
+    <form>
+      <!--event:blur, handle:onblur, eventsource:inputelement-->
+      이름 : <input type="text" id="name" onblur="blurHandler()"" onchange="changeHandler()"/>
+      <p>When you leave the input field,
+        a function is trggered which
+        transforms the input text to upper case.</p><br>
+      Choose which browser you prefer:
+      <select id="browsers" onchange="preferedBrowser()">
+        <option value="Chrome">Chrome</option>
+        <option value="Internet Explorer">Internet Explorer</option>
+        <option value="Firefox">Firefox</option>
+      </select> 
+      <br>
+      Enter your name: <input type="text" name="target" onfocus="focusHandler(this)">
+      <p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+      
+      <input type="button" id="theme" value="dark" onclick="clickHandler(this)">
+
+    </form>
+  </body>
+</html>

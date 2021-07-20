@@ -1,0 +1,96 @@
+#page_title {
+  text-align: center;
+  color : hsl(122, 39%, 49%);
+  font-weight : bold;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#textInput input{
+    background-color: white;
+    border: 2px solid #4CAF50;
+    margin: 2px;
+}
+
+#inputText textarea{
+  background-color: white;
+  border: 2px solid #4CAF50;
+  padding: 40px 20px;
+  margin: 2px;
+}
+
+#inputText label{
+  text-align: start;
+}
+
+#inputText input{
+  background-color: white;
+  border: 2px solid #4CAF50;
+  margin: 2px;
+}
+
+#checkboxInput input{
+  text-align: right;
+  text-align-last: right;   
+  position: relative;
+}
+
+
+#buttons {
+  text-align: center;
+}
+
+#buttons input{
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+#buttons a {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+#buttons a:hover {
+  background-color: #4CAF50;
+  color: white; 
+}
+
+#clicker {
+  text-align: center;
+}
+
+#clicer #choices {
+  padding: 5px 15px;
+}
+
+
+#roles {
+  text-align: center;
+}

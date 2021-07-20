@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 회원 가입 페이지</title> 
+    <meta charset='utf8'> 
+    <link rel="stylesheet" href="./css/style.css"></link>
+    <script>
+      function verifyInputs() {
+        account = document.getElementById('account').value;
+        pw = document.getElementById('pw').value;
+        pwVerify = document.getElementById('pwVerify').value
+        agreed = document.getElementById('agree').checked;
+        disagreed = document.getElementById('disagree').checked;
+        aiBool = document.getElementById("AI").checked;
+        iotBool = document.getElementById("IOT").checked;
+        bigDataBool = document.getElementById("BigData").checked;
+        cloudBool = document.getElementById("Cloud").checked;
+        role = document.getElementById("roles").value;
+        email = document.getElementById("emailAddress").value;
+
+        if (agreed === false && disagreed === false) {
+          alert("모든 항목을 입력해 주세요.");
+          return false;
+        } else {
+          if (aiBool === true || bigDataBool === true || iotBool === true || cloudBool === true) {
+            if (account !== "" && pw !== "" && pwVerify !== "" && role !== "" && email !== "") {
+              if (pw !== pwVerify) {
+                alert("비밀번호를 확인해주세요.");
+                return false;
+              } else {
+                alert("회원가입 완료")
+                return true;
+              }  
+            } else {
+              alert("모든 항목을 입력해 주세요.");
+              return false;
+            }
+          } else {
+            alert("모든 항목을 입력해 주세요.");
+            return false;
+          }
+        }        
+      }
+    </script>  
+  </head>
+
+  <br>
+
+  <body>
+    <div id="page_title">
+      <h1>회원 가입</h1>
+    </div>
+    
+    <form name="register" action="login.html" onsubmit="return verifyInputs();" method="post" >
+      <div id = "textInput">
+        <p>
+          <label for="account">아 이 디</label>
+          <input type="text" id="account" name="account"><br>
+          <label for="emailAddress">이 메 일 </label>
+          <input type="email" id="emailAddress" name="emailAddress"><br>
+          <label for="pw">비밀번호</label>
+          <input type="password" id="pw" name="pw"><br>
+          <label for="pwVerify">비번확인</label>
+          <input type="password" id="pwVerify" name="pwVerify">
+        </p>
+      </div>
+
+      <div id="radioInput">
+        <p>
+          <label for="mailRecieve">메일수신</label>
+          <input type="radio" id="agree" name="mailRecieve" value ="true" unchecked>동의
+          <input type="radio" id="disagree" name="mailRecieve" value ="false" unchecked>동의 안함
+        </p>
+      </div>
+      
+      <div id="checkboxInput">
+        <p>
+          <label for="interested">관심분야</label>
+          <input type="checkbox" id = "AI" name="interested" value="AI" unchecked>AI<br>
+          <input type="checkbox" id = "IOT" name="interested" value="IOT"unchecked>IOT<br>
+          <input type="checkbox" id = "BigData" name="interested" value="BigData"unchecked>BigData<br>
+          <input type="checkbox" id = "Cloud" name="interested" value="Cloud"unchecked>Cloud<br>
+        </p>
+      </div>
+
+      <div id="selectInput">
+        <label for="roles">역할</label>
+        <select id = "roles" name="roles">
+          <option value="Back-End Developer">Back-End Developer</option>
+          <option value="Frond-End Developer">Front-End Developer</option>
+          <option value="Full-Stack Developer">Full-Stack Developer</option>
+          <option value="DevOps Engineer">DevOps Engineer</option>
+          <option value="Analysis">Analysis</option>
+          <option value="Architect">Architect</option>
+        </select>
+      </div>
+
+      <div id=buttons>
+        <p>
+          <input type="submit" value=" 가입 ">
+          <input type="reset" value="  초기화  ">
+          <input type="button" onclick="location.href='login.html'" value="home으로">
+        </p>
+      </div>
+    </form>
+  </body>
+</html>

@@ -44,3 +44,4 @@ function myFunction(total, value, index, array) {
 let sumShort = numbersReduce.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(sum)
 console.log(sumShort)
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>로그인 페이지</title>
+    <meta charset='utf8'> 
+    <link rel="stylesheet" href="./css/style.css"></link>
+    <script>
+      function verifyInputs() {
+        account = document.getElementById("account").value;
+        pw = document.getElementById("pw").value;
+        
+        if (account === 'admin' && pw === '123') {
+          alert("환영합니다.");
+          return true;
+        } else {
+          alert("아이디와 비밀번호를 확인해주세요.")
+          return false;
+        }
+      }
+    </script>
+
+  </head>
+
+  <br>
+
+  <body>
+    <div id="page_title">
+      <h1>로그인</h1>
+    </div>
+
+    <form name="login" action="add.html" onsubmit="return verifyInputs();" >
+      <div id = "textInput">
+        <label for="account">아 이 디</label><br>
+        <input type="text" id="account" name="account" value = "id=admin;pw=123"><br>
+        <label for="pw">비밀번호</label><br>
+        <input type="password" id="pw" name="pw"><br><br>
+      </div>  
+      
+      <div id = "buttons">
+        <input type="submit" value=" 로그인 ">
+        <input type="button" onclick = "location.href='entry.html'" value="  회원 가입  ">
+    </form>  
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>일정 관리 페이지</title>
+    <meta charset='utf8'>  
+    <link rel="stylesheet" href="./css/style.css"></link>
+    
+    <script>
+      function show() {
+        title = document.getElementById("title").value;
+        content = document.getElementById("content").value;
+        dueDate = document.getElementById("dueDate").value;
+        alert(`일정 등록 완료.\n\n제목: ${title}\n\n내용: ${content}\n\n일정: ${dueDate}`)
+      }
+    </script>
+  </head>
+  <br>
+
+  <body>
+    <div id="page_title">
+      <h1>일정 관리 페이지</h1>
+    </div>
+
+    <form name="addSchedule" onsubmit="show();"> 
+      <div id = "inputText">
+          <p>
+            <label for='title'>제목</label> &ensp;&ensp;&ensp;
+            <input type='text' id="title" name='title'value=''>
+            </p>
+          <p>
+            <label for='content'>내용</label> &ensp;&ensp;&ensp;
+            <textarea name='content' id='content'  value=''></textarea>
+            </p>
+          <p>
+            <label for='dueDate'>일정</label> &ensp;&ensp;&ensp;
+            <input type='datetime-local' id='dueDate' name='dueDate' >
+          </p>
+         </div>
+          
+         <div id='buttons' >
+          <p>
+            &emsp;&emsp;&emsp; &emsp;&emsp;
+            <input type="submit" value=" 일정 등록 ">
+            <input type="button" onclick="location.href='login.html'" value="로그아웃">
+          </p>
+        </div>
+
+  </body>
+
