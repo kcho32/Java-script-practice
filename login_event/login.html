@@ -8,15 +8,19 @@
       function verifyInputs() {
         account = document.getElementById("account").value;
         pw = document.getElementById("pw").value;
-        
-        if (account === 'admin' && pw === '123') {
-          alert("환영합니다.");
-          return true;
+        pwVerify = JSON.parse(localStorage.getItem(account)); //localStorage.get(item)으로 받아오면 stringify로 했기 때문에 저장할때  "{key:value, key2:value2}" object 전체가 string으로 들어온다. 그걸 parse로 다시 object화 시켜주는 것
+        if (pwVerify === null){
+          alert("존재하지 않는 아이디입니다.\n회원가입을 진행해주세요.")
         } else {
-          alert("아이디와 비밀번호를 확인해주세요.")
-          return false;
+          if (pwVerify.pw === pw) {
+            alert("환영합니다");
+            document.getElementById("loginForm").submit();
+          } else {
+            alert("비밀번호를 확인해주세요.")
+          }
         }
       }
+
     </script>
 
   </head>
@@ -28,7 +32,7 @@
       <h1>로그인</h1>
     </div>
 
-    <form name="login" action="add.html" onsubmit="return verifyInputs();" >
+    <form id="loginForm" name="login" action="add.html">
       <div id = "textInput">
         <label for="account">아 이 디</label><br>
         <input type="text" id="account" name="account" value = "id=admin;pw=123"><br>
@@ -37,7 +41,7 @@
       </div>  
       
       <div id = "buttons">
-        <input type="submit" value=" 로그인 ">
+        <input type="button" onclick="verifyInputs();" value=" 로그인 ">
         <input type="button" onclick = "location.href='entry.html'" value="  회원 가입  ">
     </form>  
 

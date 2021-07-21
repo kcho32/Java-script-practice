@@ -11,6 +11,7 @@
         content = document.getElementById("content").value;
         dueDate = document.getElementById("dueDate").value;
         alert(`일정 등록 완료.\n\n제목: ${title}\n\n내용: ${content}\n\n일정: ${dueDate}`)
+        document.getElementById("addForm").submit();
       }
     </script>
   </head>
@@ -21,7 +22,7 @@
       <h1>일정 관리 페이지</h1>
     </div>
 
-    <form name="addSchedule" onsubmit="show();"> 
+    <form id="addForm" name="addSchedule"> 
       <div id = "inputText">
           <p>
             <label for='title'>제목</label> &ensp;&ensp;&ensp;
@@ -40,7 +41,7 @@
          <div id='buttons' >
           <p>
             &emsp;&emsp;&emsp; &emsp;&emsp;
-            <input type="submit" value=" 일정 등록 ">
+            <input type="button" onclick="show();" value=" 일정 등록 ">
             <input type="button" onclick="location.href='login.html'" value="로그아웃">
           </p>
         </div>
